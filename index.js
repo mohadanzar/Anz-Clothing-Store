@@ -17,7 +17,7 @@ const nextImage = document.querySelector('.next .side-image');
 const productName = document.querySelector('.product-name');
 const productPrice = document.querySelector('.product-price');
 
-let currentIndex = 1; // Start with Core Hoodie
+let currentIndex = 0; // Start with Core Hoodie
 
 function updateProducts() {
     // Calculate indexes for prev and next products
