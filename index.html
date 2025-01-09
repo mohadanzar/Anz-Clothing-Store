@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.0.1/remixicon.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Clothing Store</title>
+    <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div class="container">
+        <nav class="nav">
+            <a href="/index.html" class="logo">Clothing</a>
+
+            <ul class="nav-list">
+                <li class="nav-item"><a href="/index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="/mens.html" class="nav-link">Men</a></li>
+                <li class="nav-item"><a href="/Women.html" class="nav-link">Women</a></li>
+                <li class="nav-item"><a href="/Bag.html" class="nav-link">Bags</a></li>
+                <li class="nav-item"><a href="/contact.html" class="nav-link">Contact Us</a></li>
+            </ul>
+
+            
+            <div class="nav-icons">
+                <button class="nav-icons heart-btn">
+                        <i class="ri-heart-line"></i>
+                </button>
+                <button class="nav-icons cart-btn">
+                        <i class="ri-shopping-cart-line"></i>
+                </button>
+            </div>
+                      
+
+        </nav>
+
+        <main class="main">
+            <section class="product-showcase">
+                <div class="products-container">
+                    <div class="product-slide prev">
+                        <img src="/img/clothing-1.png" alt="Previous Product" class="side-image">
+                    </div>
+                    
+                    <div class="product-slide current">
+                        <div class="circle">
+                            <div class="circle-inner"><h1 class="circle-text">Clothing</h1> </div>
+                        </div>
+                        <img src="/img/clothing-2.png" alt="Current Product" class="main-image">
+                        <div class="product-info">
+                            <h2 class="product-name">Core Hoodie</h2>
+                            <p class="product-price">$125</p>
+                        </div>
+                        <div class="navigation-arrows">
+                            <button class="nav-button prev-btn">
+                                <i class="ri-arrow-left-line"></i>
+                            </button>
+                            <button class="nav-button next-btn">
+                                <i class="ri-arrow-right-line"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-slide next">
+                        <img src="/img/clothing-3.png" alt="Next Product" class="side-image">
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="language-toggle">ES | EN</div>
+            <div class="social-links">
+                <a href="#"><i class="ri-facebook-fill"></i></a>
+                <a href="#"><i class="ri-instagram-line"></i></a>
+                <a href="#"><i class="ri-twitter-x-line"></i></a>
+            </div>
+        </footer>
+    </div>
+    <script src="/index.js"></script>
+</body>
+</html>

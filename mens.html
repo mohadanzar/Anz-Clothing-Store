@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.0.1/remixicon.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Clothing Store</title>
+    <link rel="stylesheet" href="/index.css">
+    <style>
+        /* * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        } */
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            /* object-fit: cover; */
+        }
+
+        .product-info1 {
+            padding: 15px;
+            text-align: none;
+            margin-bottom: 0px; 
+            margin-left: 10px;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 8px;
+            
+        }
+
+        .star {
+            color: #FFD700;
+        }
+
+        .reviews {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .product-name {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .product-category {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .price-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .current-price {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .discount {
+            color: #ff4646;
+            font-size: 14px;
+        }
+
+        @media (max-width: 1024px) {
+            .grid-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="nav">
+            <a href="/index.html" class="logo">Clothing</a>
+
+            <ul class="nav-list">
+                <li class="nav-item"><a href="/index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="/mens.html" class="nav-link">Men</a></li>
+                <li class="nav-item"><a href="/Women.html" class="nav-link">Women</a></li>
+                <li class="nav-item"><a href="/Bag.html" class="nav-link">Bags</a></li>
+                <li class="nav-item"><a href="/contact.html" class="nav-link">Contact Us</a></li>
+            </ul>
+
+            
+            <div class="nav-icons">
+                <button class="nav-icons heart-btn">
+                        <i class="ri-heart-line"></i>
+                </button>
+                <button class="nav-icons cart-btn">
+                        <i class="ri-shopping-cart-line"></i>
+                </button>
+            </div>
+        </nav>
+
+
+
+        <div class="grid-container" id="productGrid">
+            <!-- Products will be inserted here by JavaScript -->
+        </div>
+
+        <footer class="footer">
+            <div class="language-toggle">ES | EN</div>
+            <div class="social-links">
+                <a href="#"><i class="ri-facebook-fill"></i></a>
+                <a href="#"><i class="ri-instagram-line"></i></a>
+                <a href="#"><i class="ri-twitter-x-line"></i></a>
+            </div>
+        </footer>
+
+    </div>
+
+
+    <script>
+        // Sample product data
+        const products = [
+            {
+                image: "/img/c-6.png",
+                rating: 4.3,
+                reviews: 528,
+                name: "Lux T-Shirt",
+                category: "Thermal Clothing Set",
+                currentPrice: "Rs. 500",
+                originalPrice: "Rs. 1000",
+                discount: "50% OFF"
+            },
+            {
+                image: "/img/clothing-1.png",
+                rating: 4.3,
+                reviews: 528,
+                name: "Core Hoddie",
+                category: "Thermal Clothing Set",
+                currentPrice: "Rs. 1000",
+                originalPrice: "Rs. 2000",
+                discount: "50% OFF"
+            },
+            {
+                image: "/img/clothing-3.png",
+                rating: 4.3,
+                reviews: 528,
+                name: "Premiere Pants",
+                category: "Thermal Clothing Set",
+                currentPrice: "Rs. 450",
+                originalPrice: "Rs. 900",
+                discount: "50% OFF"
+            },
+            {
+                image: "/img/c-7.png",
+                rating: 4.3,
+                reviews: 528,
+                name: "Lux Shirt",
+                category: "Thermal Clothing Set",
+                currentPrice: "Rs. 600",
+                originalPrice: "Rs. 1200",
+                discount: "50% OFF"
+            },
+            {
+                image: "/img/clothing-4.png",
+                rating: 4.3,
+                reviews: 528,
+                name: "Black Shorts",
+                category: "Thermal Clothing Set",
+                currentPrice: "Rs. 425",
+                originalPrice: "Rs. 850",
+                discount: "50% OFF"
+            },
+            {
+                image: "/img/clothing-5.png",
+                rating: 4.3,
+                reviews: 528,
+                name: "Cool T-Shirt",
+                category: "Thermal Clothing Set",
+                currentPrice: "Rs. 500",
+                originalPrice: "Rs. 1000",
+                discount: "50% OFF"
+            },
+            {
+                image: "/img/c-6.png",
+                rating: 4.3,
+                reviews: 528,
+                name: "Lux T-Shirt",
+                category: "Thermal Clothing Set",
+                currentPrice: "Rs. 500",
+                originalPrice: "Rs. 1000",
+                discount: "50% OFF"
+            },
+            {
+                image: "/img/clothing-1.png",
+                rating: 4.3,
+                reviews: 528,
+                name: "Core Hoddie",
+                category: "Thermal Clothing Set",
+                currentPrice: "Rs. 1000",
+                originalPrice: "Rs. 2000",
+                discount: "50% OFF"
+            }
+            // Duplicate the same product 7 more times for the grid
+            // ...Array(7).fill().map(() => ({
+            //     image: "/c-7.png",
+            //     rating: 4.3,
+            //     reviews: 528,
+            //     name: "Lux Cottswool",
+            //     category: "Thermal Clothing Set",
+            //     currentPrice: "Rs. 849",
+            //     originalPrice: "Rs. 999",
+            //     discount: "15% OFF"
+            // }))
+        ];
+
+        function createProductCard(product) {
+            return `
+                <div class="product-card">
+                    <img src="${product.image}" alt="${product.name}" class="product-image">
+                    <div class="product-info1">
+                        <div class="rating">
+                            <span class="star">★</span>
+                            <span>${product.rating}</span>
+                            <span class="reviews">| ${product.reviews}</span>
+                        </div>
+                        <h3 class="product-name1">${product.name}</h3>
+                        <div class="product-category">${product.category}</div>
+                        <div class="price-container">
+                            <span class="current-price">${product.currentPrice}</span>
+                            <span class="original-price">${product.originalPrice}</span>
+                            <span class="discount">(${product.discount})</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Render products
+        const productGrid = document.getElementById('productGrid');
+        products.forEach(product => {
+            productGrid.innerHTML += createProductCard(product);
+        });
+    </script>
+</body>
+</html>
